@@ -1,0 +1,101 @@
+Painel IPTV XTREAM (Instalação)
+
+REQUISITO-
+
+
+*PARA INICIAR SEU PROJETO VOCÊ TERÁ QUE TER UMA VPS COM UBUNTU 14.04.5 RODANDO. ACONSELHO UMA QUE SEJE NO MINIMO 8GB DE MEMORIA E PROCESSADOR DUPLO CASO CONTRÁRIO NÃO IRÁ FUNCIONAR!!
+
+GOSTO DESSA VPS https://cloud.digitalocean.com MAIS VOCÊ PODE FICAR A VONTADE PARA ESCOLHER A QUE MELHOR LHE CONVÊM.
+
+
+
+
+APÓS CRIAR A SUA VPS, SERÁ ENCAMINHADO EM SEU E-MAIL --> IP E --> SENHA (TODA ESQUESITA), QUE SERÁ UTILIZADA PARA ACESSAR O SERVER VIA PUTTY. COLE-OS NO PUTTY E SIGA AS INSTRUÇÕES ABAIXO.
+
+
+
+COPIE E COLE 1 A 1
+
+1* (via putty) --> apt-get update
+
+
+2* (via putty) --> apt-get upgrade -y
+
+
+
+3* (via WinSCP)
+agora move o arquivo: 
+
+install_iptv_pro.php --> para a pasta /Root do servidor
+
+4* (via WinSCP)
+agora move o arquivo:
+
+iptv_panel_pro.zip --> para a pasta /tmp do servidor
+
+
+5* (via putty)
+copie e cole esse comando
+
+apt-get install lsb-release nscd curl php5 php5-mysql php5-cli php5-curl unzip -y
+
+* se perguntar se e (y/n) confirma y e de Enter
+
+
+6* (via putty) --> apt-get install php5-mcrypt
+
+
+7* (via putty) --> php5enmod mcrypt
+
+
+8* (via putty) --> service apache2 restart
+
+9*
+agora volte a usar (Via WinSCP)
+
+move as pastas: modules,downloads,licences --> para a pasta /var/www/html/ do servidor
+em caso de nao aparecer a pasta www dentro de var e so criar ela.
+
+
+10* (via putty) --> php install_iptv_pro.php
+
+
+11* (via putty) --> licenca1
+
+
+12* (via putty)
+vai ser solicitado uma senha coloque uma
+e nao se esqueça ( recomendo colocar a mesma da vps 
+para que nao se esqueça e use apenas uma.
+
+13* (via putty) agora sera solicitado a porta coloque : 8000
+
+14* (via putty) agora sera solicitado uma senha para vc entrar no seu painel
+coloque a a senha + nao se esqueça.
+
+
+15* (via WinSCP)
+mova o arquivo xtreamcodes_pro_panel --> para a pasta /etc/init.d/
+
+se perguntar se gostaria de substituir clique em sim.
+
+
+16* (via putty)b--> sudo reboot
+
+Pronto foi finalizado a instalaçao do painel
+para vc acessar ele entre no navegador e coloque
+o ip da sua vps : xxx.xxx.xxx.xxx:8000
+
+
+e tera acesso com usuario
+
+admin
+e a sua senha criada
+
+
+espero que tenha gostado
+
+agora e so inserir os canais
+
+
+um abraço. 
